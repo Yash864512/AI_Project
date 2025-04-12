@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Cover Letter Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <!-- Inter font for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-[#09090B] text-white min-h-screen flex flex-col">
+  <div class="container mx-auto px-4 py-8 flex-grow">
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold tracking-tight">Cover Letter Generator</h1>
+      <p class="text-[#A1A1AA] mt-2">Create professional cover letters in seconds</p>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Input Section -->
+      <div class="bg-[#18181B] p-6 rounded-xl border border-[#27272A] shadow-xl">
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium mb-2 text-[#A1A1AA]">Job Position Details</label>
+            <textarea 
+              id="userInput" 
+              class="w-full h-48 p-4 bg-[#09090B] border border-[#27272A] rounded-lg 
+                     text-white placeholder-[#71717A] focus:ring-2 focus:ring-[#6366F1] 
+                     focus:border-transparent transition-all duration-200"
+              placeholder="Enter job title, company name, key requirements, and any specific points you'd like to highlight..."></textarea>
+          </div>
+          <button 
+            id="generateBtn"
+            class="w-full bg-white text-black py-3 px-6 rounded-lg font-medium
+                   hover:bg-[#F4F4F5] transition-colors duration-200 
+                   focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 
+                   focus:ring-offset-[#18181B]">
+            Generate Cover Letter
+          </button>
+        </div>
+      </div>
+
+      <!-- Preview Section -->
+      <div class="bg-[#18181B] p-6 rounded-xl border border-[#27272A] shadow-xl">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-xl font-semibold">Preview</h2>
+          <button 
+            id="downloadBtn"
+            class="bg-[#6366F1] text-white py-2 px-4 rounded-lg font-medium
+                   hover:bg-[#4F46E5] transition-colors duration-200
+                   focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:ring-offset-2
+                   focus:ring-offset-[#18181B]">
+            Download PDF
+          </button>
+        </div>
+        <div id="preview-container" class="relative">
+          <div 
+            id="coverLetterArea"
+            class="preview-paper"
+            contenteditable="true">
+            Your professional cover letter will appear 
+            here.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="w-full border-t border-[#27272A] mt-8">
+    <div class="container mx-auto px-4 py-6">
+      <p class="text-center text-[#A1A1AA] text-sm">
+        Made with ❤️ by 
+        <a href="https://github.com/yashwantmallela" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="text-white hover:text-[#6366F1] transition-colors duration-200">
+          Yashwant Mallela
+        </a>
+      </p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

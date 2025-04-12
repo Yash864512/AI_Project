@@ -1,0 +1,119 @@
+/* Modern reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Preview paper styling */
+.preview-paper {
+    background: white;
+    width: 100%;
+    min-height: 11in;
+    padding: 1in;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    font-size: 12pt;
+    line-height: 1.6;
+    outline: none;
+    color: #18181B;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.preview-paper:focus {
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.6);
+}
+
+/* Letter content styling */
+#coverLetterArea {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#coverLetterArea p {
+    margin-bottom: 1.2em;
+}
+
+/* Button states */
+.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    border: 2px solid transparent;
+    border-top-color: currentColor;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes spin {
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* PDF specific styles */
+.pdf-content {
+    width: 8.5in;
+    min-height: 11in;
+    padding: 1in;
+    background: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    margin: 0 auto;
+    color: #18181B;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #27272A;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #52525B;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #71717A;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .preview-paper {
+        padding: 0.75in;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .preview-paper {
+        padding: 0.5in;
+    }
+}
